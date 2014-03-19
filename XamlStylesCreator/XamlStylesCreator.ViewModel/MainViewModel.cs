@@ -85,7 +85,7 @@ namespace XamlStylesCreator.ViewModel
             else
             {
                 ParserFacade parser = new ParserFacade();
-                
+
                 try
                 {
                     Output.Text = parser.Parse(_input.Text);

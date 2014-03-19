@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Xml;
-using XamlStylesCreator.Model;
-using XamlStylesCreator.Model.Classes;
 using XamlStylesCreator.Model.Factories;
 using XamlStylesCreator.Model.Interfaces;
 
@@ -22,22 +20,27 @@ namespace XamlStylesCreator.ViewModel.ControlTransformer
                     // Property
                     string property = node.Name.Substring(node.Name.IndexOf('.') + 1);
 
+                    string value = null;
+
                     // Value
-                    string startSearchPattern = string.Format("<{0}", node.FirstChild.Name);
-                    int indexStart = node.InnerXml.IndexOf(startSearchPattern, StringComparison.Ordinal);
-
-                    string value = node.InnerXml.Substring(indexStart);
-
-                    string endSearchPattern = string.Format("</{0}>", node.FirstChild.Name);
-                    int indexEnd = value.IndexOf(endSearchPattern, StringComparison.Ordinal);
-
-                    if (indexEnd < 0)
+                    if (node.FirstChild != null)
                     {
-                        endSearchPattern = "/>";
-                        indexEnd = value.IndexOf(endSearchPattern, StringComparison.Ordinal);
-                    }
+                        string startSearchPattern = string.Format("<{0}", node.FirstChild.Name);
+                        int indexStart = node.InnerXml.IndexOf(startSearchPattern, StringComparison.Ordinal);
 
-                    value = value.Substring(0, (indexEnd + endSearchPattern.Length));
+                        value = node.InnerXml.Substring(indexStart);
+
+                        string endSearchPattern = "xmlns";
+                        int indexEnd = value.IndexOf(endSearchPattern, StringComparison.Ordinal);
+
+                        if (indexEnd < 0)
+                        {
+                            endSearchPattern = "/>";
+                            indexEnd = value.IndexOf(endSearchPattern, StringComparison.Ordinal);
+                        }
+
+                        value = value.Substring(0, (indexEnd - 1)) + " />";
+                    }
 
                     IXamlSetter setter = ModelFactory.CreateSetterComplex();
                     setter.Property = property;
