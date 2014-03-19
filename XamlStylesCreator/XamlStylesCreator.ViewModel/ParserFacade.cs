@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using System.Text;
+using System.Xml;
 using XamlStylesCreator.Model.Interfaces;
 using XamlStylesCreator.ViewModel.ControlTransformer;
 using XamlStylesCreator.ViewModel.Serializer;
@@ -12,8 +13,15 @@ namespace XamlStylesCreator.ViewModel
     {
         public string Parse(string originalXaml)
         {
-            // Initialize a XML document
-            string definitiveXaml = string.Format("<Document xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\">{0}</Document>", originalXaml);
+            StringBuilder builder = new StringBuilder();
+            builder.Append("<Document xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\" ");
+            builder.Append("xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\" ");
+            builder.Append("xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\" ");
+            builder.Append("mc:Ignorable=\"d\">");
+            builder.Append(originalXaml);
+            builder.Append("</Document>");
+
+            string definitiveXaml = builder.ToString();
 
             // Create the XML document
             XmlDocument xmlDocument = new XmlDocument();
