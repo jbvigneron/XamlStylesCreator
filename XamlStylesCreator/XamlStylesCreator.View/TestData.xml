@@ -1,0 +1,39 @@
+﻿<TextBlock CaretOffset="{Binding Input}"
+                               Grid.Column="0"
+                               Margin="10" />
+							   
+<Button Content="Parser"
+                    Command="{Binding ParseCommand}"
+Width="50" Height="50"
+                    Margin="5" />
+
+<Button Content="Parser"
+                    Command="{Binding ParseCommand}"
+                    Margin="5">
+                    <Button.Name>lol</Button.Name>
+                    </Button>
+
+
+<ListBox CaretOffset="{Binding Input}"
+                               Grid.Column="0"
+                               Margin="10">
+  <ListBox.ItemTemplate>
+     <DataTemplate>
+        <StackPanel Orientation="Vertical">
+            <TextBox Content="{Binding Nom}" />
+            <Image />
+        </StackPanel>
+     </DataTemplate>
+  </ListBox.ItemTemplate>
+  <ListBox.Fill>
+    <LinearGradientFill Color="Red" />
+  </ListBox.Fill>
+</ListBox>
+
+<ListBox CaretOffset="{Binding Input}"
+                               Grid.Column="0"
+                               Margin="10">
+  <ListBox.Fill>
+    <LinearGradientFill Color="Red" />
+  </ListBox.Fill>
+</ListBox>

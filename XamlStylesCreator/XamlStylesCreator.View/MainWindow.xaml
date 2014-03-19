@@ -1,0 +1,57 @@
+﻿<Window x:Class="XamlStylesCreator.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit"
+        xmlns:ressources="clr-namespace:XamlStylesCreator.View.Ressources"
+        Title="XamlStylesCreator"
+        Background="#538ED7"
+        Height="600" Width="800"
+        WindowStartupLocation="CenterScreen"
+        DataContext="{Binding MainVM, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.97*" />
+            <RowDefinition Height="1.03*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+
+            <!-- Input -->
+            <TextBlock Text="{x:Static ressources:AppRessources.Input}"
+                       FontFamily="Fonts/#Segoe WP"
+                       Margin="10"
+                       HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+            <avalonedit:TextEditor Document="{Binding Input, Mode=TwoWay}"
+                                   Grid.Row="0"
+                                   Margin="10,39,10,3" />
+            
+            <TextBlock Text="1"
+                       Style="{StaticResource NumberLabelStyle}" Margin="0,0,27,-3" />
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+
+            <!-- Action buttons -->
+            <Button Content="{x:Static ressources:AppRessources.GenerateStyles}"
+                    Command="{Binding ParseCommand}"
+                    HorizontalAlignment="Right" VerticalAlignment="Top"
+                    Margin="0,0,10,5" Padding="5" />
+
+            <!-- Input -->
+            <TextBlock Text="{x:Static ressources:AppRessources.Output}"
+                       Margin="10,13.02,0,0"
+                       HorizontalAlignment="Left" VerticalAlignment="Top" />
+            
+            <!-- Output -->
+            <avalonedit:TextEditor Document="{Binding Output, Mode=OneWay}"
+                                   Margin="10,41.96,10,10"
+                                   IsReadOnly="True" />
+
+            <TextBlock Text="2"
+                       Style="{StaticResource NumberLabelStyle}" Margin="0,0,27,-2" />
+
+        </Grid>
+    </Grid>
+</Window>
