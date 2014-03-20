@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using ICSharpCode.AvalonEdit.Document;
 using System.Windows.Input;
+using XamlStylesCreator.BusinessLogic;
 using XamlStylesCreator.ViewModel.Exceptions;
 using XamlStylesCreator.ViewModel.Interfaces;
 

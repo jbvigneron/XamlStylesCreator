@@ -54,15 +54,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ParserFacade.cs" />
-    <Compile Include="ControlTransformer\NodesTransformer.cs" />
-    <Compile Include="ControlTransformer\IControlTransformer.cs" />
-    <Compile Include="ControlTransformer\AttributesTransformer.cs" />
-    <Compile Include="ControlTransformer\StyleTransformer.cs" />
-    <Compile Include="Serializer\SetterComplexSerializer.cs" />
-    <Compile Include="Serializer\SetterSerializer.cs" />
-    <Compile Include="Serializer\SetterSimpleSerializer.cs" />
-    <Compile Include="Serializer\StyleSerializer.cs" />
     <Compile Include="Exceptions\StringEmptyException.cs" />
     <Compile Include="Exceptions\FormatErrorException.cs" />
     <Compile Include="Interfaces\IMainViewModel.cs" />
