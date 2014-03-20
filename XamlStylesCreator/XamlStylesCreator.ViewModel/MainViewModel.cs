@@ -76,7 +76,7 @@ namespace XamlStylesCreator.ViewModel
         /// <summary>
         /// Parse the input string into styles
         /// </summary>
-        private void Parse()
+        public void Parse()
         {
             if (string.IsNullOrWhiteSpace(_input.Text))
             {
