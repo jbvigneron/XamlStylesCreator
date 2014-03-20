@@ -2,7 +2,7 @@
 using XamlStylesCreator.Model.Factories;
 using XamlStylesCreator.Model.Interfaces;
 
-namespace XamlStylesCreator.ViewModel.ControlTransformer
+namespace XamlStylesCreator.BusinessLogic.ControlTransformer
 {
     class StyleTransformer : IControlTransformer
     {

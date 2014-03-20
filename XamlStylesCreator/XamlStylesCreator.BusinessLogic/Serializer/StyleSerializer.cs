@@ -1,7 +1,8 @@
 ﻿using System;
 using XamlStylesCreator.Model.Interfaces;
+using XamlStylesCreator.ViewModel.Serializer;
 
-namespace XamlStylesCreator.ViewModel.Serializer
+namespace XamlStylesCreator.BusinessLogic.Serializer
 {
     public class StyleSerializer
     {

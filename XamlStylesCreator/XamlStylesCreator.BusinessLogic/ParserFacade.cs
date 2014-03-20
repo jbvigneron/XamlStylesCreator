@@ -1,15 +1,16 @@
 ﻿using System.Text;
 using System.Xml;
+using XamlStylesCreator.BusinessLogic.ControlTransformer;
+using XamlStylesCreator.BusinessLogic.Serializer;
 using XamlStylesCreator.Model.Interfaces;
-using XamlStylesCreator.ViewModel.ControlTransformer;
 using XamlStylesCreator.ViewModel.Serializer;
 
-namespace XamlStylesCreator.ViewModel
+namespace XamlStylesCreator.BusinessLogic
 {
     /// <summary>
     /// Facade which analyse all controls and transform them into XAML styles
     /// </summary>
-    class ParserFacade
+    public class ParserFacade
     {
         public string Parse(string originalXaml)
         {

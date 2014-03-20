@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using ICSharpCode.AvalonEdit.Document;
 using System.Windows.Input;
+using XamlStylesCreator.BusinessLogic;
 using XamlStylesCreator.ViewModel.Exceptions;
 using XamlStylesCreator.ViewModel.Interfaces;
 
@@ -76,7 +77,7 @@ namespace XamlStylesCreator.ViewModel
         /// <summary>
         /// Parse the input string into styles
         /// </summary>
-        private void Parse()
+        public void Parse()
         {
             if (string.IsNullOrWhiteSpace(_input.Text))
             {

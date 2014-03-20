@@ -1,7 +1,7 @@
 ﻿using System.Xml;
 using XamlStylesCreator.Model.Interfaces;
 
-namespace XamlStylesCreator.ViewModel.ControlTransformer
+namespace XamlStylesCreator.BusinessLogic.ControlTransformer
 {
     interface IControlTransformer
     {

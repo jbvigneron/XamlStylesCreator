@@ -12,5 +12,7 @@ namespace XamlStylesCreator.ViewModel.Interfaces
         TextDocument Output { get; }
 
         ICommand ParseCommand { get; }
+
+        void Parse();
     }
 }
