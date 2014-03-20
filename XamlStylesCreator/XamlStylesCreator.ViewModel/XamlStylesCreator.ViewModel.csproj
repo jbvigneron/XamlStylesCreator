@@ -69,6 +69,10 @@
     <Compile Include="ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\XamlStylesCreator.BusinessLogic\XamlStylesCreator.BusinessLogic.csproj">
+      <Project>{139c47cd-93de-4010-b3a5-1ea9f5a7a9e5}</Project>
+      <Name>XamlStylesCreator.BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XAMLStylesCreator.Model\XamlStylesCreator.Model.csproj">
       <Project>{9c07e463-6db5-4e46-8314-6927156d179f}</Project>
       <Name>XamlStylesCreator.Model</Name>
